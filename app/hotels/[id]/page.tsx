@@ -9,6 +9,8 @@ import roomData from '../../data/roomData';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { DateRange } from 'react-date-range';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -144,7 +146,10 @@ const hotels = [
 
 ];
 
-
+type DateType = {
+    start: string;
+    end: string;
+};
 
 type Room = {
     name: string;
@@ -153,6 +158,7 @@ type Room = {
     capacity: number;
     amenities: string[];
     pricePerNight: string;
+    availableDates: { start: Date; end: Date }[];
 };
 
 
@@ -203,7 +209,26 @@ export default function HotelDetailPage() {
 
 
             const foundRoomsEntry = roomData.find((entry) => entry.hotelId === id);
-            setRooms(foundRoomsEntry ? foundRoomsEntry.rooms : []);
+
+            if (foundRoomsEntry) {
+                const convertedRooms = foundRoomsEntry.rooms.map((room) => ({
+                    ...room,
+                    availableDates: room.availableDates
+                        .filter((range) => range.start && range.end)
+                        .map((range) => ({
+                            start: new Date(range.start),
+                            end: new Date(range.end),
+                        })),
+                }));
+
+                setRooms(convertedRooms);
+            } else {
+                setRooms([]);
+            }
+
+
+
+
         }
     }, [id]);
 
@@ -211,15 +236,42 @@ export default function HotelDetailPage() {
         return <div>Yükleniyor...</div>;
     }
     const handleSearch = () => {
+        if (!hotel) return;
+        const availableRooms = rooms.filter(room => {
+            if (!room.availableDates) return false;
+
+            return room.availableDates.some(range => {
+                const rangeStart = new Date(range.start);
+                const rangeEnd = new Date(range.end);
+                const selStart = new Date(selectionRange.startDate);
+                const selEnd = new Date(selectionRange.endDate);
+
+                rangeStart.setHours(0, 0, 0, 0);
+                rangeEnd.setHours(0, 0, 0, 0);
+                selStart.setHours(0, 0, 0, 0);
+                selEnd.setHours(0, 0, 0, 0);
+                return selStart <= rangeEnd && selEnd >= rangeStart;
+            });
+
+        });
+        if (availableRooms.length === 0) {
+            toast.error('Seçtiğiniz tarihlerde müsait oda bulunmamaktadır.');
+        } else {
+            setRooms(availableRooms);
+            const section = document.getElementById("rooms-section");
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+    };
+    const handleScrollToRooms = () => {
         const section = document.getElementById("rooms-section");
         if (section) {
-            section.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
         }
+    };
 
-    }
+
 
     return (
         <div
@@ -404,7 +456,7 @@ export default function HotelDetailPage() {
 
                     <div className="d-flex align-items-center gap-3">
                         <div style={{ fontWeight: 'bold', fontSize: '1.1rem', color: 'white' }}>{hotel.price}</div>
-                        <button className="btn btn-light btn-lg fw-bold " style={{ color: '#2c3e50' }} onClick={handleSearch}>Odaları Gör                     </button>
+                        <button className="btn btn-light btn-lg fw-bold " style={{ color: '#2c3e50' }} onClick={handleScrollToRooms}>Odaları Gör                     </button>
                     </div>
                 </div>
 
