@@ -1,0 +1,157 @@
+.register-container {
+    display: flex;
+
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.left-side {
+
+    background-color: #f3f3f3;
+
+
+}
+
+.right-side {
+    height: 90vh;
+    background-color: #1e1e2f;
+    color: white;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+}
+
+.logo-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #7b5cff;
+    margin-right: 10px;
+
+    background-image: url('/Logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 24px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+input[type='text'],
+input[type='email'] {
+    padding: 5px;
+    background-color: #2E2E48;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+
+}
+
+.checkbox-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    accent-color: #8558c0;
+}
+
+.register-btn {
+    background-color: #8558c0;
+    color: white;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 6px;
+    font-weight: 400;
+    cursor: pointer;
+
+}
+
+.register-btn:hover {
+    background-color: #8558c0;
+}
+
+.divider {
+    text-align: center;
+    color: #999;
+    margin: 1.2rem 0;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #444;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212;
+    color: white;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+
+
+}
+
+
+.login-link {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+.login-link a {
+    color: #8abaf8;
+    text-decoration: none;
+}
