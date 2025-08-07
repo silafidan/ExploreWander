@@ -103,3 +103,11 @@ body {
 .swiper-button-next-custom {
   right: 0;
 }
+
+.popup-image {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 5px;
+}

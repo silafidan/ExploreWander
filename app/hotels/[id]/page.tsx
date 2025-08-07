@@ -11,6 +11,7 @@ import 'react-date-range/dist/theme/default.css';
 import { DateRange } from 'react-date-range';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+import MyMap from '../../../components/MyMap';
 
 
 
@@ -25,6 +26,8 @@ const hotels = [
         location: 'Gümüşlük',
         type: 'Resort',
         description: 'Tesis, güzelce düzenlenmiş bahçelere, yollara ve havuzlara sahip; dingin ve lüks bir atmosfer yaratıyor. Konuklar, spanın huzurlu atmosferine, yetenekli terapistlerine ve mükemmel sauna/buhar odası sıcaklıklarına bayılıyor; tam rahatlama için ideal. Sorunsuz varışlar ve ayrılışlar için kusursuz havaalanı ulaşımını ayarla (ek ücrete tabidir). Çocuk Kulübü, çocukları eğlendirmek için ilgi çekici aktiviteler ve günlük bir program sunuyor; ebeveynlerin rahatlamasına olanak tanıyor. Konaklaman sırasında unutulmaz anlar yaratan, profesyonelce organize edilmiş akşam eğlencesinin tadını çıkar.',
+        latitude: 37.0387,
+        longitude: 27.2634,
 
     },
     {
@@ -35,7 +38,8 @@ const hotels = [
         location: 'Beşiktaş',
         type: 'Hotel',
         description: 'Konuklar, otelin tam Boğaz üzerinde yer alan muhteşem konumuna, odalardan ve restoranlardan nefes kesen manzaralar sunmasına bayılıyor. Spa tam bir olay, konuklar huzurlu bir kaçamak için geleneksel Türk Hamamı deneyimini tavsiye ediyor. Hafif içecekler sunan bir barın eşlik ettiği ücretsiz şemsiye ve şezlonglarla açık havuzun kenarında rahatlayın. Personel, güler yüzlülüğü, ilgisi ve konuklar için ellerinden gelenin fazlasını yapma isteğiyle sürekli olarak yüksek övgü alıyor.',
-
+        latitude: 41.042973,
+        longitude: 29.010859,
     },
     {
         id: '3',
@@ -45,7 +49,8 @@ const hotels = [
         location: 'Ankara',
         type: 'Hotel',
         description: 'Teras katında yer alan Elewen restoranda muhteşem manzaralar eşliğinde unutulmaz bir yemek deneyimi yaşa. Oteldeki kapalı havuz, sauna ve hamamda rahatlayarak yenilen. Şehir merkezinde, Anıtkabir, Atakule, Ankara Otobüs Terminali ve alışveriş merkezlerine yakın konumda. Konuklar, otelin temizliğini, özellikle de tertemiz banyoları ve bakımlı odaları sürekli olarak övüyor ve bu da keyifli ve hijyenik bir konaklama sağlıyor.',
-
+        latitude: 39.902462,
+        longitude: 32.814551,
     },
 
     {
@@ -56,7 +61,8 @@ const hotels = [
         location: 'Başiskele',
         type: 'Hotel',
         description: 'Otelin harika konumu sayesinde büyük bir alışveriş merkezine anında ulaşabilir, yemek ve alışveriş seçeneklerinden kolayca faydalanabilirsin. Konuklar, otelin temizliğe verdiği önemi sürekli övüyor, özellikle odaların ve banyoların tertemiz olduğuna dikkat çekiyor. Pek çok konuk, özellikle resepsiyondaki personelin samimi ve yardımsever tavrını vurgulayarak konaklamalarını keyifli hale getirdiğini belirtiyor. Daha fazla konfor ve rahatlık için odanda terlik, ücretsiz banyo malzemeleri ve saç kurutma makinesinin keyfini çıkarabilirsin.',
-
+        latitude: 40.8533,
+        longitude: 29.8815,
 
     },
     {
@@ -67,7 +73,8 @@ const hotels = [
         location: 'Ankara',
         type: 'Hotel',
         description: 'Kahvaltı büfesi, geniş taze ve lezzetli seçenekleri ile yüksek not alıyor. Birçok konuk, personelin nezaketi sayesinde otelin evden uzakta bir ev gibi hissettirdiğini belirtiyor. Lüks süitlerde ayrı oturma odaları ve nefes kesen Boğaz manzarasına sahip iki teras bulunuyor. Değerlendirmelerde otelin temizliği ve odalarının ve tesislerinin bakımlı durumu sürekli olarak vurgulanıyor. ',
-
+        latitude: 41.04058,
+        longitude: 29.00522,
     },
     {
         id: '6',
@@ -77,7 +84,8 @@ const hotels = [
         location: 'Tekkeköy',
         type: 'Hotel',
         description: 'Konaklamanız sırasında uygun yemek seçenekleri sunan otel restoranında doyurucu bir yemeğin tadını çıkarın. Oteldeki banket salonunda unutulmaz etkinliklere ve toplantılara ev sahipliği yapın; kutlamalar ve özel günler için mükemmel. Güler yüzlü ve ilgili personel, yardımseverlikleri ve mükemmel hizmetleri sayesinde sürekli olarak övgü topluyor. Otelin otoyola yakın konumu, özellikle yetersiz pencere yalıtımı durumunda gürültü rahatsızlıklarına neden olabilir.',
-
+        latitude: 41.2767,
+        longitude: 36.3039,
     },
     {
         id: '7',
@@ -87,7 +95,8 @@ const hotels = [
         location: 'Denizli',
         type: 'Hotel',
         description: 'Oteldeki 7/24 açık fitness merkezinde egzersiz rutininizi koruyun, konaklamanız boyunca canlılığınızı ve sağlığınızı güvence altına alın. Konuklar için bir mini market mevcuttur ve temel eşyalara ve atıştırmalıklara kolay erişim sağlar. Otel, evcil hayvanları kabul ediyor ve bu da onu hayvan dostları olan gezginler için harika bir seçenek haline getiriyor. Pek çok misafir, otel personelinin samimi, yardımsever ve ilgili doğasını vurguladı. ',
-
+        latitude: 37.9260,
+        longitude: 29.1180,
     },
     {
         id: '8',
@@ -97,7 +106,8 @@ const hotels = [
         location: 'Sivas',
         type: 'Hotel',
         description: 'Otelimizin kapalı havuzu ve iyi donatılmış fitness merkezi ile formunu koruyabilirsin, sporunu aksatma! Otelden kısa bir yürüyüşle süslü Şifaiye Medresesini, eski bir İslam tıp okulunu ve sultanın türbesini keşfedebilirsin, tam sana göre!',
-
+        latitude: 39.75,
+        longitude: 37.017,
     },
     {
         id: '9',
@@ -107,7 +117,8 @@ const hotels = [
         location: 'Ürgüp',
         type: 'Hotel',
         description: 'Konuklar, sessiz ve huzurlu atmosferleriyle bilinen gerçek mağara odalarında konaklama deneyiminin tadını çıkarıyor. Otel konumu sayesinde şehir merkezine, pazarlara ve çeşitli turistik yerlere kısa bir yürüyüş veya sürüş mesafesinde kolayca ulaşabilirsin. Kahvaltı yüksek notlar alıyor; konuklar ev yapımı ürünleri ve sunulan tatmin edici çeşitliliği takdir ediyor. Temizlik sürekli vurgulanan bir özellik; konuklar odaların ve otelin genel olarak kusursuz durumunu sürekli olarak belirtiyor. Konuklar, oteli işleten ailenin sıcak, samimi ve yardımsever doğasını sürekli olarak övüyor.',
-
+        latitude: 38.631691,
+        longitude: 34.911034,
     },
     {
         id: '10',
@@ -117,7 +128,8 @@ const hotels = [
         location: 'Sinop',
         type: 'Hotel',
         description: 'Konaklamanız sırasında otelin restoranında lezzetli yemeklerin tadını çıkarın ve barda serinletici içeceklerin keyfini çıkarın. Konuklar, konaklamaları sırasında canlı müzik performanslarının tadını çıkardılar, bu da ortama ve eğlence seçeneklerine katkıda bulundu. Otelin pitoresk bahçesinde dinlenin, ortak salonda rahatlayın veya davetkar terastan manzaranın tadını çıkarın. Konuklar, güncellenmiş menüyü ve genel ambiyansı fark ettiler, bu da ziyaretçiler için harika bir deneyim yarattı.',
-
+        latitude: 42.023,
+        longitude: 35.153,
 
 
 
@@ -130,7 +142,8 @@ const hotels = [
         location: 'Ayvalık',
         type: 'Hotel',
         description: 'Havuzda serinletici bir yüzme molası ver ve otelin su kenarındaki loungeında rahatlatıcı bir içkinin keyfini çıkar. Otelin kahvaltı büfesi kapsamlı ve lezzetli, konuklar yemek seçeneklerinin kalitesini ve çeşitliliğini vurguluyor. Tesis, çocuk kulübü, sığ deniz erişimi ve kolay gezinme için olanakların yakınlığı ile aileler için çok uygun. Otel, belirlenmiş alanlar ve olanaklarla evcil hayvanları memnuniyetle karşılar, bu da onu tüylü dostlarıyla seyahat edenler için öne çıkan bir seçim haline getirir. Değerlendirmelerde otelin temizliği sürekli olarak vurgulanıyor, tertemiz odalar ve bakımlı ortak alanlar belirtiliyor.',
-
+        latitude: 39.3279,
+        longitude: 26.7270,
     },
     {
         id: '12',
@@ -140,11 +153,13 @@ const hotels = [
         location: 'Marmaris',
         type: 'Hotel',
         description: 'Eğlence ekibi, her yaştan konuk için eğlenceli aktiviteler ve şovlar sunarak enerjileri ve kapsayıcılıkları nedeniyle büyük övgü alıyor. Otel, çok çeşitli yemek seçenekleri sunuyor ve konuklar açık büfe seçeneklerinin lezzetliliğini ve çeşitliliğini övüyor. Küçükleri, çocuklara yönelik denetimli aktiviteler ve eğlence sunan çocuk kulübünde eğlendirin. Otelin konumu, dükkanlara, restoranlara ve şehir merkezine kolay erişim sağlıyor ve otobüs durağına yakında bulunuyor.',
-
+        latitude: 36.8565,
+        longitude: 28.2610,
     },
 
 
 ];
+
 
 type DateType = {
     start: string;
@@ -172,6 +187,8 @@ type Hotel = {
     location: string;
     type: string;
     description: string;
+    latitude: number;
+    longitude: number;
 };
 
 export default function HotelDetailPage() {
@@ -205,8 +222,16 @@ export default function HotelDetailPage() {
         if (id) {
 
             const foundHotel = hotels.find((h) => h.id === id);
-            setHotel(foundHotel || null);
+            if (foundHotel) {
+                setHotel({
+                    ...foundHotel,
+                    latitude: foundHotel.latitude ?? 0,
+                    longitude: foundHotel.longitude ?? 0,
 
+                });
+            } else {
+                setHotel(null);
+            }
 
             const foundRoomsEntry = roomData.find((entry) => entry.hotelId === id);
 
@@ -290,11 +315,11 @@ export default function HotelDetailPage() {
                     style={{ margin: 'auto', backgroundColor: '#65a084ff' }}
                 >
                     <div className="d-flex gap-3 justify-content-between align-items-center">
-                        <div style={{ position: 'relative', flex: '2', minWidth: '280px' }}>
+                        <div style={{ position: 'relative', flex: '1 1 200px', minWidth: '120px' }}>
                             <label className="form-label fw-semibold text-white " style={{ marginLeft: '20px', fontSize: '18px' }}>Giriş / Çıkış</label>
 
                             <button
-                                className="form-control text-start"
+                                className="form-control text-start "
                                 onClick={() => setOpenCalendar(!openCalendar)}
                                 style={{
                                     color: '#2c3e50',
@@ -330,37 +355,21 @@ export default function HotelDetailPage() {
                                 </div>
                             )}
                         </div>
-
-
-
-
-                        {/* Misafir */}
-                        <div style={{ flex: '1 1 200px', minWidth: '120px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                            <label htmlFor="guests" className="form-label fw-semibold text-white me-auto" style={{ marginLeft: '20px', fontSize: '18px' }}>
-                                Misafir
-                            </label>
-                            <input
-                                id="guests"
-                                type="number"
-                                className="form-control"
-                                min={1}
-                                value={guests}
-                                onChange={(e) => setGuests(Number(e.target.value))}
-                                style={{
-                                    color: '#2c3e50',
-                                    fontFamily: 'Poppins',
-                                    fontWeight: '500',
-                                    fontSize: '18px',
-                                    letterSpacing: '0.5px',
-                                    padding: '10px 14px',
-                                    borderRadius: '999px'
-                                }}
-                            />
-                        </div>
-                        <div style={{ flex: '1 1 200px', minWidth: '120px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                            <label className="form-label d-block">&nbsp;</label>
-                            <button className="btn btn-light w-100 fw-bold" style={{
-                                marginLeft: '20px', color: '#2c3e50',
+                    </div>
+                    {/* Misafir */}
+                    <div style={{ flex: '1 1 200px', minWidth: '120px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <label htmlFor="guests" className="form-label fw-semibold text-white me-auto" style={{ marginLeft: '20px', fontSize: '18px' }}>
+                            Misafir
+                        </label>
+                        <input
+                            id="guests"
+                            type="number"
+                            className="form-control "
+                            min={1}
+                            value={guests}
+                            onChange={(e) => setGuests(Number(e.target.value))}
+                            style={{
+                                color: '#2c3e50',
                                 fontFamily: 'Poppins',
                                 fontWeight: '500',
                                 fontSize: '18px',
@@ -368,14 +377,27 @@ export default function HotelDetailPage() {
                                 padding: '10px 14px',
                                 borderRadius: '999px'
                             }}
-                                onClick={handleSearch}
-                            >
-                                Ara
-                            </button>
-                        </div>
-
+                        />
                     </div>
+                    <div style={{ flex: '1 1 200px', minWidth: '120px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <label className="form-label d-block">&nbsp;</label>
+                        <button className="btn btn-light fw-bold" style={{
+                            marginLeft: '20px', color: '#2c3e50',
+                            fontFamily: 'Poppins',
+                            fontWeight: '500',
+                            fontSize: '18px',
+                            letterSpacing: '0.5px',
+                            padding: '10px 14px',
+                            borderRadius: '999px'
+                        }}
+                            onClick={handleSearch}
+                        >
+                            Ara
+                        </button>
+                    </div>
+
                 </div>
+
 
                 <div className="row mb-4 mt-3" style={{ marginTop: '150px' }}>
                     <div className="col-12">
@@ -456,14 +478,24 @@ export default function HotelDetailPage() {
 
                     <div className="d-flex align-items-center gap-3">
                         <div style={{ fontWeight: 'bold', fontSize: '1.1rem', color: 'white' }}>{hotel.price}</div>
-                        <button className="btn btn-light btn-lg fw-bold " style={{ color: '#2c3e50' }} onClick={handleScrollToRooms}>Odaları Gör                     </button>
+                        <button className="btn btn-light btn-lg fw-bold " style={{ color: '#2c3e50' }} onClick={handleScrollToRooms}>Odaları Gör</button>
                     </div>
                 </div>
 
 
-                {/* Otel Açıklaması */}
-                <div className="mt-4 p-3 rounded" style={{ backgroundColor: '#65a084ff', color: 'white' }}>
-                    <p>{hotel.description}</p>
+                {/* Otel Açıklama*/}
+                <div
+                    className="d-flex  gap-4 mt-4 p-3 rounded"
+                    style={{ backgroundColor: '#65a084ff', color: 'white' }}
+                >
+
+                    <div style={{ flex: '1 1 50%', minWidth: '250px' }}>
+                        <p>{hotel.description}</p>
+                    </div>
+
+                    <div style={{ flex: '1 1 50%', minWidth: '250px', height: '250px' }}>
+                        <MyMap center={[hotel.latitude, hotel.longitude]} zoom={13} imageUrl={hotel.image[0]} title={hotel.title} />
+                    </div>
                 </div>
 
 
@@ -540,6 +572,7 @@ export default function HotelDetailPage() {
             )}
             <footer />
         </div>
+
 
 
     )

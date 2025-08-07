@@ -1,18 +1,19 @@
 'use client';
 import Image from 'next/image';
 import './globals.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import AccountNavButton from '../components/AccountNavButton';
-import { HotelCard } from '../components/HotelCard';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
+import BootstrapScript from '../components/BootstrapScript';
 
 export default function Home() {
 
   const router = useRouter();
   return (
     <>
+
+      <BootstrapScript />
       <div
         style={{
           backgroundImage: "url('/home.jpg')",
@@ -51,10 +52,10 @@ export default function Home() {
             ></div>
 
             <div className="container-fluid">
-              <a className="navbar-brand d-flex align-items-center gap-2" href="#">
-                <img src="/explorewander.svg" alt="Logo" width="220" height="220" />
+              <Link href="/" className="navbar-brand d-flex align-items-center gap-2">
+                <Image src="/explorewander.svg" alt="Logo" width="220" height="220" />
                 <span className="fw-semibold text-white"></span>
-              </a>
+              </Link>
 
               <button
                 className="navbar-toggler"
@@ -71,10 +72,10 @@ export default function Home() {
               <div className="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                 <ul className="navbar-nav ms-auto gap-3 fs-5" style={{ marginRight: '30px', marginTop: '4px' }}>
                   <li className="nav-item">
-                    <a className="nav-link text-white " href="#">Home</a>
+                    <Link href="/" className="nav-link text-white ">Home</Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link text-white" href="#">Flights</a>
+                    <Link href="/" className="nav-link text-white" >Flights</Link>
                   </li>
                   <li className="nav-item">
                     <Link href="/hotels" className="nav-link text-white">
@@ -82,7 +83,7 @@ export default function Home() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link text-white" href="#">About</a>
+                    <Link href="/" className="nav-link text-white" >About</Link>
                   </li>
 
                 </ul>
@@ -134,8 +135,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container">
-        <div className=" py-5">
+
+      <div className="container ">
+        <div className=" py-5 ">
 
           <h2 className="text-center mb-5 fw-bold">Why Choose ExploreWander?</h2>
           <div className="row text-center">

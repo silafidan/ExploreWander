@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from "../components/footer";
+import 'leaflet/dist/leaflet.css';
+
 
 
 
@@ -18,7 +20,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Explore Wander",
   description: "Your travel companion",
 

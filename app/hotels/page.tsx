@@ -1,16 +1,17 @@
 
 'use client';
 import React from 'react';
-import { title } from 'process';
 import Header from '../../components/Header';
 import { HotelCard } from '../../components/HotelCard';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
+
+import MyMap from '../../components/MyMap';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+
 
 
 
@@ -24,6 +25,9 @@ const hotels = [
         location: 'Gümüşlük',
         type: 'Resort',
         description: 'Çarpıcı deniz manzaralı odalar,kusursuz bahçeler ve tasarım.',
+        latitude: 37.0387,
+        longitude: 27.2634,
+
     },
     {
         id: '2',
@@ -34,6 +38,8 @@ const hotels = [
         location: 'Beşiktaş',
         type: 'Hotel',
         description: 'Geniş terastan Boğazın muhteşem manzarasının keyfini çıkarın, dinlenmek ve yemek yemek için mükemmel bir zemin.',
+        latitude: 41.042973,
+        longitude: 29.010859,
     },
     {
         id: '3',
@@ -44,6 +50,8 @@ const hotels = [
         location: 'Ankara',
         type: 'Hotel',
         description: 'Camla çevrili çatı katı toplantı odasından nefes kesen panoramik şehir manzaralarının keyfini çıkar.',
+        latitude: 39.902462,
+        longitude: 32.814551,
     },
     {
         id: '4',
@@ -54,7 +62,8 @@ const hotels = [
         location: 'Başiskele',
         type: 'Hotel',
         description: 'Otelin tam donanımlı, günün her saati açık fitness merkezi sayesinde egzersiz rutinine istediğin zaman devam edebilirsin.',
-
+        latitude: 40.8533,
+        longitude: 29.8815,
     },
     {
         id: '5',
@@ -65,6 +74,8 @@ const hotels = [
         location: 'Ankara',
         type: 'Hotel',
         description: 'Isıtmalı kapalı havuzda serinletici bir yüzme keyfi yapın, rahatlamak ve egzersiz yapmak için mükemmel.',
+        latitude: 41.04058,
+        longitude: 29.00522,
     },
     {
         id: '6',
@@ -75,6 +86,8 @@ const hotels = [
         location: 'Tekkeköy',
         type: 'Hotel',
         description: 'Sezonluk açık yüzme havuzuna ve dinlendirici bir saunaya erişim ile rahatlamanın ve eğlenmenin keyfini çıkar.',
+        latitude: 41.2767,
+        longitude: 36.3039,
     },
     {
         id: '7',
@@ -85,6 +98,8 @@ const hotels = [
         location: 'Denizli',
         type: 'Hotel',
         description: 'Konuklar, otelin restoranında servis edilen lezzetli yemeklere, özellikle de şefin kreasyonlarına bayılıyor.',
+        latitude: 37.9260,
+        longitude: 29.1180,
     },
     {
         id: '8',
@@ -95,6 +110,8 @@ const hotels = [
         location: 'Sivas',
         type: 'Hotel',
         description: 'Otelimizdeki restoranda lezzetli yemeklerin ve Sivasın tarihi simgelerinin muhteşem manzarasının tadını çıkarabilirsin, benden söylemesi!',
+        latitude: 39.75,
+        longitude: 37.017,
     },
     {
         id: '9',
@@ -105,6 +122,8 @@ const hotels = [
         location: 'Ürgüp',
         type: 'Hotel',
         description: 'Konuklar terasta dinlenmenin, hoş manzaraların ve sağladığı huzurlu atmosferin tadını çıkarıyor.',
+        latitude: 38.631691,
+        longitude: 34.911034,
     },
     {
         id: '10',
@@ -115,6 +134,8 @@ const hotels = [
         location: 'Sinop',
         type: 'Hotel',
         description: 'Bungalovlar inanılmaz manzaralar sunuyor, bu da o manzara için yağmurda ıslanmaya değer kılıyor.',
+        latitude: 42.023,
+        longitude: 35.153,
     },
     {
         id: '11',
@@ -125,6 +146,8 @@ const hotels = [
         location: 'Ayvalık',
         type: 'Hotel',
         description: 'Her oda büyüleyici bahçe, doğa veya deniz manzarası sunarak Ayvalıktaki huzurlu kaçamağını zenginleştiriyor.',
+        latitude: 39.3279,
+        longitude: 26.7270,
     },
     {
         id: '12',
@@ -135,6 +158,8 @@ const hotels = [
         location: 'Marmaris',
         type: 'Hotel',
         description: 'Ailece eğlenmek için mükemmel olan, heyecan verici su kaydıraklarına sahip bir havuz da dahil olmak üzere, kapalı ve açık havuzların keyfini çıkar!',
+        latitude: 36.8565,
+        longitude: 28.2610,
     },
 
 
@@ -145,6 +170,7 @@ const hotels = [
 export default function HotelsPage() {
     return (
         <>
+
             <Header />
             <div
                 style={{

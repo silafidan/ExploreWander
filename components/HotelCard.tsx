@@ -14,10 +14,12 @@ type Props = {
     location: string;
     type: string;
     description: string;
+    latitude?: number;
+    longitude?: number;
 
 
 };
-export const HotelCard = ({ id, title, image, price, rating, location, type, description }: Props) => {
+export const HotelCard = ({ id, title, image, price, rating, location, type, description, latitude, longitude }: Props) => {
     return (
         <Link href={` /hotels/${id}`} className="text-decoration-none">
             <div className="card mb-5 shadow-sm border-0 p-3"

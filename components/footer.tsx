@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
-import Link from 'next/link';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
-export default function Header() {
+
+export default function Footer() {
     return (
         <footer className="bg-dark text-white pt-4 pb-4" >
             <div className="container ">

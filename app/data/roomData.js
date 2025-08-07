@@ -17,7 +17,8 @@ const roomData = [
                 ],
                 "pricePerNight": "35.900 TL",
                 "availableDates": [
-                    { start: new Date("2025-08-06"), end: new Date("2025-08-08") }, { start: new Date("2025-08-12"), end: new Date("2025-08-15") }]
+                    { start: new Date("2025-08-06"), end: new Date("2025-08-08") }, { start: new Date("2025-08-12"), end: new Date("2025-08-15") }],
+
             },
             {
                 "name": "Standart Oda",
@@ -383,7 +384,7 @@ const roomData = [
         "rooms": [
             {
                 "name": "Suit Oda",
-                "image": "/room28.png",
+                "image": "/sinopfoto1.png",
                 "capacity": 2,
                 "amenities": [
                     "Klima",
@@ -395,7 +396,7 @@ const roomData = [
             },
             {
                 "name": "Suit Oda",
-                "image": "/room29.png",
+                "image": "/sinopfoto2.png",
                 "capacity": 4,
                 "amenities": [
                     "Klima",
@@ -407,7 +408,7 @@ const roomData = [
             },
             {
                 "name": "Suit Oda",
-                "image": "/room30.png",
+                "image": "/sinopfoto3.png",
                 "capacity": 2,
                 "amenities": [
                     "TV",
@@ -424,7 +425,7 @@ const roomData = [
         "rooms": [
             {
                 "name": "Suit Oda",
-                "image": "/room31.png",
+                "image": "/ayvalık1.png",
                 "capacity": 4,
                 "amenities": [
                     "TV",
@@ -436,7 +437,7 @@ const roomData = [
             },
             {
                 "name": "Suit Oda",
-                "image": "/room32.png",
+                "image": "/ayvalık2.png",
                 "capacity": 4,
                 "amenities": [
                     "TV",
@@ -448,7 +449,7 @@ const roomData = [
             },
             {
                 "name": "Suit Oda",
-                "image": "/room33.png",
+                "image": "/ayvalık3.png",
                 "capacity": 3,
                 "amenities": [
                     "Wi-Fi",
@@ -466,7 +467,7 @@ const roomData = [
         "rooms": [
             {
                 "name": "Standart Oda",
-                "image": "/room34.png",
+                "image": "/d1.png",
                 "capacity": 3,
                 "amenities": [
                     "Minibar",
@@ -478,7 +479,7 @@ const roomData = [
             },
             {
                 "name": "Deluxe Oda",
-                "image": "/room35.png",
+                "image": "/d2.png",
                 "capacity": 4,
                 "amenities": [
                     "Klima",
@@ -490,7 +491,7 @@ const roomData = [
             },
             {
                 "name": "Deluxe Oda",
-                "image": "/room36.png",
+                "image": "/d3.png",
                 "capacity": 3,
                 "amenities": [
                     "TV",

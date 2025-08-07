@@ -6,7 +6,7 @@ import Head from 'next/head';
 
 
 
-export const Header = () => {
+const Header = () => {
     return (
         <></>
 
